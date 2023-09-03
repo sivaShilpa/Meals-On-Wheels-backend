@@ -7,24 +7,19 @@
 const express = require('express')
 const router = express.Router()
 
+const mealCtrl = require('../controllers/meals-controller') 
 ///////////////////////////////
 // ROUTES
 ////////////////////////////////
 
 // MEAL INDEX ROUTE
-router.get("/", async (req, res) => {
-	res.status(200).json({message: "meal index route"})
-});
+router.get("/", mealCtrl.index);
 
 // MEAL CREATE ROUTE
-router.post("/", async (req, res) =>  {
-	res.status(201).json({message: "meal create route"})
-});
+router.post("/", mealCtrl.create);
 
 // MEAL SHOW ROUTE
-router.get("/:id", (req, res) => {
-	res.status(200).json({message: "meal show route: " + req.params.id })
-});
+router.get("/:id", mealCtrl.getOne);
 
 // MEAL DELETE ROUTE
 router.delete("/:id", (req, res) => {
