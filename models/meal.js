@@ -6,25 +6,35 @@ const mealSchema = new Schema({
         type: String,
         required: true
     },
+    cookTime:{
+        type: Number
+    },
+    nutrition:[{
+        type: Number
+    }],
     description: {
         type: String,
         required: true
-    },
-    origin: {
-        type: String,
-        // TODO: add enum for each region or create lookup table
     },
     ingredients: [{
         type: Schema.Types.ObjectId,
         ref: "Ingredient"
     }],
-    flavorProfile: {
+    n_ingredients:{
+        type: Number
+    },
+    cuisine: {
+        type: String,
+        // TODO: add enum for each region or create lookup table
+    },
+    lifeStyle: {
         type: String
     },
-    spiceLevel: {
-        type: Number,
-        min: 1,
-        max: 5
+    course:{
+        type: String
+    },
+    image:{
+        type: String
     }
 })
 
