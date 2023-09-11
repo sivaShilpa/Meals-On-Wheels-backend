@@ -43,7 +43,7 @@ app.use((req, res, next)=>{
 // ROUTES
 ////////////////////////////////
 // create a test route
-app.use('/Menu', mealRouter)
+app.use("/Menu", mealRouter)
 
 //connect to db
 mongoose.connect(process.env.MONGODB_URI)

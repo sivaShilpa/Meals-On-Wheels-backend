@@ -3,7 +3,7 @@
 ////////////////////////////////
 
 const express = require('express')
-const {Meal} = require('../models/meal')
+const Meal = require('../models/meal')
 
 ///////////////////////////////
 // CONTROLLERS
@@ -63,7 +63,7 @@ async function update(req,res,next) {
     );
   } catch (error) {
     //send error
-    res.status(400).json(error);
+    res.status(400).json(error.message);
   }
 };
 

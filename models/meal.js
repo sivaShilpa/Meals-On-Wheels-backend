@@ -9,6 +9,9 @@ const mealSchema = new Schema({
     cookTime:{
         type: Number
     },
+    tags:{
+        type: String
+    },
     nutrition:[{
         type: Number
     }],
@@ -17,8 +20,8 @@ const mealSchema = new Schema({
         required: true
     },
     ingredients: [{
-        type: Schema.Types.ObjectId,
-        ref: "Ingredient"
+        type: String
+        
     }],
     n_ingredients:{
         type: Number
