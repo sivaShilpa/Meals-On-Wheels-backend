@@ -3,7 +3,7 @@
 ////////////////////////////////
 
 const express = require('express')
-const {Meal} = require('../models')
+const {Meal} = require('../models/meal')
 
 ///////////////////////////////
 // CONTROLLERS
@@ -35,7 +35,7 @@ async function create(req,res,next) {
 async function detail(req,res,next) {
     try {
         // send one person
-        res.json(await People.findById(req.params.id));
+        res.json(await Meal.findById(req.params.id));
       } catch (error) {
         //send error
         res.status(400).json(error);
