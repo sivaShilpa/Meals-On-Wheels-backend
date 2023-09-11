@@ -8,6 +8,7 @@ const express = require('express')
 const router = express.Router()
 
 const mealCtrl = require('../controllers/meals-controller') 
+
 ///////////////////////////////
 // ROUTES
 ////////////////////////////////
@@ -22,15 +23,10 @@ router.post("/", mealCtrl.create);
 router.get("/:id", mealCtrl.getOne);
 
 // MEAL DELETE ROUTE
-router.delete("/:id", (req, res) => {
-	res.status(200).json({message: "meal delete route: " + req.params.id })
-});
+router.delete("/:id", mealCtrl.delete);
 
 // MEAL UPDATE ROUTE
-router.put("/:id", (req, res) => {
-	console.log(req.body)
-	res.status(200).json({message: "meal update route: " + req.params.id })
-});
+router.put("/:id", mealCtrl.update);
 
 module.exports = router
 

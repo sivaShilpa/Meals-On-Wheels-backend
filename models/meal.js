@@ -36,6 +36,6 @@ const mealSchema = new Schema({
     image:{
         type: String
     }
-})
+}, { timestamps: true })
 
 module.exports = mongoose.model("Meal", mealSchema);
