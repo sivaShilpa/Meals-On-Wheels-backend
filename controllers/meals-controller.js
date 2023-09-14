@@ -16,7 +16,7 @@ async function index(req,res,next) {
     res.status(200).json(await Meal.find({}));
   } catch (error) {
     //send error
-    res.status(400).json(error);
+    res.status(400).json({mssg: error.message});
   }
 };
 

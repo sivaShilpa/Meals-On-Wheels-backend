@@ -17,7 +17,6 @@ const mealSchema = new Schema({
     }],
     description: {
         type: String,
-        required: true
     },
     ingredients: [{
         type: String
@@ -28,7 +27,6 @@ const mealSchema = new Schema({
     },
     cuisine: {
         type: String,
-        // TODO: add enum for each region or create lookup table
     },
     lifeStyle: {
         type: String
